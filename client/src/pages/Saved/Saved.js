@@ -54,11 +54,13 @@ return (
               title={book.title}
               subheader={book.author.length ? `Created by ${book.author}` : 'Creator unknown'}       //here username is author
             />
-            <CardMedia
+            {/* <CardMedia
               className={classes.media}
               image={book.source}      //image is now source
               title={book.title}
-            />
+            /> */}
+            <img class="cover" src={book.image} alt={book.title} />
+            <p>{book.description}</p>
             <CardActions>
               <Button
                 size='small'

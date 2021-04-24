@@ -7,7 +7,12 @@ const axios = require('axios')
 router.get('/googlebook/:search', (req, res) => {
  // axios.get(`http://www.googleapis.com/books/v1/volumes?q=${req.params.search}`)
   //axios.get(`https://www.googleapis.com/books/v1/volumes?q=${document.getElementById('search').value}`)
-  axios.get(`https://www.googleapis.com/books/v1/volumes?q=${req.params.search}&key=AIzaSyCZI4lbb_zKOrSRAC2f5XZMEYs8GBni6aI`)
+
+
+ 
+
+  axios.get(`https://www.googleapis.com/books/v1/volumes?q=${req.params.search}&api_key=${process.env.Google_API_KEY}`)     //need to fix this line
+
   //axios.get(`https://www.googleapis.com/books/v1/volumes/search?q=${req.params.search}`)
 
              .then((data)=>{

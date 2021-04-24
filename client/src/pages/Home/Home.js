@@ -79,14 +79,16 @@ bookState.books.length     //if we have length of books then map over else null
     
     /> 
 
-    <CardMedia 
+    {/* <CardMedia 
       className={classes.media}
-      // image={book.images.original.url}        //
-      // title={book.title}
-    />
-    {/* <img class="cover" src="${book.volumeInfo.imageLinks ? book.volumeInfo.imageLinks.thumbnail : ''}" alt="${book.volumeInfo.title}"/>
-      <h2>${book.volumeInfo.title}</h2>
-      <div
+      image={book.images.original.url}        //
+      title={book.title}
+    /> */}
+
+    <img className="cover" src={book.volumeInfo.imageLinks ? book.volumeInfo.imageLinks.thumbnail : ''} alt={book.volumeInfo.title}/>
+    <p>{book.volumeInfo.description}</p>
+      {/* <h2>${book.volumeInfo.title}</h2> */}
+      {/* <div
         data-title="${book.volumeInfo.title}"
         data-cover="${book.volumeInfo.imageLinks ? book.volumeInfo.imageLinks.thumbnail : ''}"
         data-authors="${book.volumeInfo.authors}"
@@ -102,10 +104,11 @@ bookState.books.length     //if we have length of books then map over else null
         color='primary'
         onClick={() => handleSaveBook({
           title: book.volumeInfo.title,
-          source: book.volumeInfo.imageLinks.smallThumbnail,
-          url: book.volumeInfo.infoLink,
+          image: book.volumeInfo.imageLinks.thumbnail,
+          link: book.volumeInfo.infoLink,
+          description: book.volumeInfo.description,
           author: book.volumeInfo.authors,
-          googleId: book.volumeInfo.id  || 1              //this came from model book.js
+          googleId: book.id  || 1              //this came from model book.js
         })}
      
      
